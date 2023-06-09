@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { singUpUser } from 'redux/operations';
+import {
+  FormRegister,
+  RegisterFeld,
+  RegisterInput,
+  RegistrationButton,
+} from './RegisterForm.styled';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -31,22 +37,50 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name
-        <input type="text" name="name" onChange={handleChange} />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" onChange={handleChange} />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" onChange={handleChange} />
-      </label>
-
-      <button type="submit">Зарегестрироваться</button>
-    </form>
+    <FormRegister onSubmit={handleSubmit}>
+      <div
+        style={{
+          position: 'relative',
+        }}
+      >
+        <RegisterFeld htmlFor="name">Name</RegisterFeld>
+        <RegisterInput
+          type="text"
+          name="name"
+          onChange={handleChange}
+          placeholder="Enter name"
+          id="name"
+        />
+      </div>
+      <div
+        style={{
+          position: 'relative',
+        }}
+      >
+        <RegisterFeld htmlFor="email">Email</RegisterFeld>
+        <RegisterInput
+          type="email"
+          name="email"
+          onChange={handleChange}
+          placeholder="Enter email"
+          id="email"
+        />
+      </div>
+      <div
+        style={{
+          position: 'relative',
+        }}
+      >
+        <RegisterFeld htmlFor="password">Password</RegisterFeld>
+        <RegisterInput
+          type="password"
+          name="password"
+          onChange={handleChange}
+          placeholder="Enter password"
+        />
+      </div>
+      <RegistrationButton type="submit">Зарегестрироваться</RegistrationButton>
+    </FormRegister>
   );
 };
 export default RegisterForm;

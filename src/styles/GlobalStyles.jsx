@@ -19,4 +19,7 @@ export const GlobalStyles = css`
   a {
     text-decoration: none;
   }
+  body {
+    background-color: #292929;
+  }
 `;

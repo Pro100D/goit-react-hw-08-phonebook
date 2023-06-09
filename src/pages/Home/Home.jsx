@@ -1,6 +1,12 @@
+import { HomeDiv, HomeTitle } from './Home.styled';
+
 const Home = () => (
-  <div>
-    <h1>Task manager welcome page</h1>
-  </div>
+  <HomeDiv>
+    <HomeTitle>
+      Welcome page of your contacts :)
+      <br />
+      please register or login to an existing account.
+    </HomeTitle>
+  </HomeDiv>
 );
 export default Home;
