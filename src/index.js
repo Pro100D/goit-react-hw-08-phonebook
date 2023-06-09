@@ -7,7 +7,8 @@ import App from 'components/App';
 import './index.css';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store';
+import { persistor, store } from 'redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const theme = {
   colors: {
@@ -22,9 +23,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <Global styles={GlobalStyles} />
       <Provider store={store}>
-        <BrowserRouter basename="goit-react-hw-08-phonebook">
-          <App />
-        </BrowserRouter>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter basename="goit-react-hw-08-phonebook">
+            <App />
+          </BrowserRouter>
+        </PersistGate>
       </Provider>
     </ThemeProvider>
   </React.StrictMode>

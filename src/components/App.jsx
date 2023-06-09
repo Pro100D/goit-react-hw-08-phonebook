@@ -3,21 +3,44 @@ import RegisterForm from '../pages/RegisterForm/RegisterForm';
 import SharedLayout from './SharedLayout';
 import LoginForm from '../pages/LoginForm/LoginForm';
 import Contacts from '../pages/Contacts/Contacts';
+import { useEffect } from 'react';
+import { fetchCurrentUser } from 'redux/operations';
+import { useDispatch } from 'react-redux';
+import PrivateRaute from './PrivateRoute';
+import RestrictedRoute from './RestrictedRoute';
+import Home from 'pages/Home/Home';
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
         <Route
-          index
+          path="/register"
           element={
-            <div>
-              <h1>Home</h1>
-            </div>
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterForm />}
+            />
           }
         />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginForm />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRaute redirectTo="/register" component={<Contacts />} />
+          }
+        />
       </Route>
     </Routes>
   );
