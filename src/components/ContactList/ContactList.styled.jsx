@@ -14,18 +14,22 @@ export const ListContactItem = styled.li`
   justify-content: space-between;
   gap: 25px;
 
-  padding: 15px 25px;
+  padding: 15px 20px;
 
-  border: 2px solid ${({ theme }) => theme.colors.prymeryColor};
+  border: 2px solid rgba(94, 255, 94, 1);
   border-radius: 6px;
 
-  background-color: rgba(227, 226, 226, 0.518);
+  background-color: #292929;
+  box-shadow: inset 2px 1px 10px 0px rgba(94, 255, 94, 1);
 `;
 
 export const ListContactInfo = styled.p`
   margin-bottom: 0;
 
-  font-size: 20px;
+  font-size: 18px;
+
+  color: #5eff5e;
+  text-shadow: 1px 1px 2px rgba(140, 246, 99, 1);
 `;
 
 export const ListRemoveBtn = styled.button`
@@ -33,19 +37,17 @@ export const ListRemoveBtn = styled.button`
 
   border-radius: 10px;
 
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: #292929;
+  color: #5eff5e;
 
   font-size: 15px;
   font-weight: 700;
-
-  transition: background-color 250ms linear;
+  border-color: #03ae03;
+  transition: box-shadow 250ms linear;
 
   :hover,
   :focus {
-    background-color: ${({ theme }) => theme.colors.prymeryColor};
-
-    color: ${({ theme }) => theme.colors.white};
-
-    transition: background-color 250ms linear;
+    box-shadow: inset 2px 1px 10px 0px rgba(94, 255, 94, 1);
+    transition: box-shadow 250ms linear;
   }
 `;

@@ -3,60 +3,59 @@ import styled from '@emotion/styled';
 export const FormPhonebook = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  gap: 15px;
+  row-gap: 25px;
+
+  margin-bottom: 40px;
 `;
 
 export const FormInput = styled.input`
-  padding: 10px 15px;
-
-  border-radius: 10px;
-  border-color: ${({ theme }) => theme.colors.prymeryBgColor};
+  padding: 15px 10px;
+  width: 350px;
   outline: none;
+  background-color: #bababa;
+  border-radius: 10px;
+  font-size: 16px;
 
-  font-size: 19px;
-
-  width: 400px;
-  transition: background-color 250ms linear;
-
-  :focus {
-    border-color: ${({ theme }) => theme.colors.accentColor};
-    background-color: rgba(0, 0, 0, 0.8);
-    color: ${({ theme }) => theme.colors.white};
-    transition: background-color 250ms linear;
+  &:focus {
+    border-color: #5eff5e;
+    box-shadow: inset 2px 1px 10px 0px rgba(94, 255, 94, 1);
+    transition: box-shadow 250ms linear;
+    transition: border-color 250ms linear;
   }
 `;
 
 export const FormLeable = styled.label`
-  font-size: 18px;
+  position: absolute;
+  top: -20px;
+  left: 15px;
+
+  font-size: 16px;
   font-weight: 600;
+
+  color: #9b9b9b;
 `;
 export const FormButtonSubmit = styled.button`
-  width: 200px;
+  width: 250px;
 
-  padding: 10px 15px;
+  margin-left: auto;
+  margin-right: auto;
 
-  font-size: 19px;
-  font-weight: 700;
+  padding: 10px 10px;
 
-  border-radius: 6px;
-
-  margin-bottom: 50px;
-
-  background-color: ${({ theme }) => theme.colors.white};
-
-  color: ${({ theme }) => theme.colors.prymeryColor};
-
-  transition: background-color 250ms linear;
-
-  :hover,
-  :focus {
-    background-color: ${({ theme }) => theme.colors.prymeryColor};
-
-    transition: background-color 2250ms linear;
-
-    color: ${({ theme }) => theme.colors.white};
-
+  border-radius: 10px;
+  font-size: 16px;
+  color: #252525;
+  background-color: #bababa;
+  transition: box-shadow 250ms linear;
+  transition: color 250ms linear;
+  &:hover,
+  &:focus {
+    transition: box-shadow 250ms linear;
+    box-shadow: inset 2px 1px 15px 0px rgba(94, 255, 94, 1);
+    color: #ffffff;
     transition: color 250ms linear;
   }
 `;

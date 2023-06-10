@@ -4,6 +4,7 @@ export const Fiterlable = styled.label`
   font-size: 18px;
   font-weight: 600;
   margin-right: 15px;
+  color: #9b9b9b;
 `;
 export const FilterInput = styled.input`
   padding: 10px 15px;
@@ -16,12 +17,12 @@ export const FilterInput = styled.input`
 
   width: 200px;
   transition: background-color 250ms linear;
-
-  :focus {
-    border-color: ${({ theme }) => theme.colors.accentColor};
-    background-color: rgba(0, 0, 0, 0.8);
-    color: ${({ theme }) => theme.colors.white};
-    transition: background-color 250ms linear;
+  background-color: #bababa;
+  &:focus {
+    border-color: #5eff5e;
+    box-shadow: inset 2px 1px 10px 0px rgba(94, 255, 94, 1);
+    transition: box-shadow 250ms linear;
+    transition: border-color 250ms linear;
   }
 `;
 

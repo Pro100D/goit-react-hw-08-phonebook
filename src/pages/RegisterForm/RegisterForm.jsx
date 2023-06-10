@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { singUpUser } from 'redux/operations';
-import {
-  FormRegister,
-  RegisterFeld,
-  RegisterInput,
-  RegistrationButton,
-} from './RegisterForm.styled';
+import { FormRegister, RegistrationButton } from './RegisterForm.styled';
+import { FormInput, FormLeable } from 'components/Form/Form.styled';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -43,8 +39,8 @@ const RegisterForm = () => {
           position: 'relative',
         }}
       >
-        <RegisterFeld htmlFor="name">Name</RegisterFeld>
-        <RegisterInput
+        <FormLeable htmlFor="name">Name</FormLeable>
+        <FormInput
           type="text"
           name="name"
           onChange={handleChange}
@@ -57,8 +53,8 @@ const RegisterForm = () => {
           position: 'relative',
         }}
       >
-        <RegisterFeld htmlFor="email">Email</RegisterFeld>
-        <RegisterInput
+        <FormLeable htmlFor="email">Email</FormLeable>
+        <FormInput
           type="email"
           name="email"
           onChange={handleChange}
@@ -71,8 +67,8 @@ const RegisterForm = () => {
           position: 'relative',
         }}
       >
-        <RegisterFeld htmlFor="password">Password</RegisterFeld>
-        <RegisterInput
+        <FormLeable htmlFor="password">Password</FormLeable>
+        <FormInput
           type="password"
           name="password"
           onChange={handleChange}

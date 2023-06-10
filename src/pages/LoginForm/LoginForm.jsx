@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/operations';
-import {
-  LoginButton,
-  LoginFeld,
-  LoginInput,
-  LoginRegister,
-} from './LoginForm.styled';
+import { LoginButton, LoginRegister } from './LoginForm.styled';
+import { FormInput, FormLeable } from 'components/Form/Form.styled';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -39,8 +35,8 @@ const LoginForm = () => {
           position: 'relative',
         }}
       >
-        <LoginFeld htmlFor="email">Email</LoginFeld>
-        <LoginInput
+        <FormLeable htmlFor="email">Email</FormLeable>
+        <FormInput
           type="email"
           id="email"
           name="email"
@@ -53,8 +49,8 @@ const LoginForm = () => {
           position: 'relative',
         }}
       >
-        <LoginFeld htmlFor="password">Password</LoginFeld>
-        <LoginInput
+        <FormLeable htmlFor="password">Password</FormLeable>
+        <FormInput
           type="password"
           name="password"
           id="password"

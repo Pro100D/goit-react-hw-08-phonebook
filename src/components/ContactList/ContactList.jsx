@@ -29,25 +29,22 @@ const ConatctList = () => {
   );
   return (
     <>
-      {isLoad ? (
-        <h2>please wait loading...</h2>
-      ) : (
-        <ListContact>
-          {filtredListContact.map(contact => (
-            <ListContactItem key={contact.id}>
-              <ListContactInfo>
-                {contact.name}: {contact.number}
-              </ListContactInfo>
-              <ListRemoveBtn
-                type="button"
-                onClick={() => dispatch(deleteContact(contact.id))}
-              >
-                remove
-              </ListRemoveBtn>
-            </ListContactItem>
-          ))}
-        </ListContact>
-      )}
+      {isLoad && <h2 style={{ color: '#ffffff' }}>please wait loading...</h2>}
+      <ListContact>
+        {filtredListContact.map(contact => (
+          <ListContactItem key={contact.id}>
+            <ListContactInfo>
+              {contact.name}: {contact.number}
+            </ListContactInfo>
+            <ListRemoveBtn
+              type="button"
+              onClick={() => dispatch(deleteContact(contact.id))}
+            >
+              remove
+            </ListRemoveBtn>
+          </ListContactItem>
+        ))}
+      </ListContact>
     </>
   );
 };

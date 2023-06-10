@@ -16,10 +16,12 @@ export const UserBtn = styled.button`
   font-size: 16px;
   color: #252525;
   background-color: #bababa;
-
+  transition: color 250ms linear;
   &:hover,
   &:focus {
     transition: box-shadow 250ms linear;
     box-shadow: inset 2px 1px 15px 0px rgba(94, 255, 94, 1);
+    color: #ffffff;
+    transition: color 250ms linear;
   }
 `;

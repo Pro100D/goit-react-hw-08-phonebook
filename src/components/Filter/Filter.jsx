@@ -13,7 +13,7 @@ const Filter = () => {
 
   return (
     <BlockLable>
-      <Fiterlable htmlFor="filter">Find contacts by name</Fiterlable>
+      <Fiterlable htmlFor="filter">Find contacts by name :</Fiterlable>
       <FilterInput
         type="text"
         value={filter}

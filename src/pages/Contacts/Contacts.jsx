@@ -1,16 +1,23 @@
 import ConatctList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import Form from 'components/Form/Form';
+import { ContactsSeaction, ContactsTitle } from './Contacts.styled';
 
 const Contacts = () => {
   return (
-    <>
-      <h1>Phonebook</h1>
+    <ContactsSeaction>
+      <ContactsTitle>Phonebook</ContactsTitle>
       <Form />
-      <h2>Contacts</h2>
+      <h2
+        style={{
+          color: '#9b9b9b',
+        }}
+      >
+        Contacts
+      </h2>
       <Filter />
       <ConatctList />
-    </>
+    </ContactsSeaction>
   );
 };
 export default Contacts;
